@@ -52,4 +52,12 @@ fn main() {
      // getting specific value
      let slice : &str = &string[0..5]; 
     println!("Slice value: {}", slice);
+    human_id("Jaime", 33, 184.67);
 }
+
+// function/ variables should be written in snake case
+fn human_id(name: &str, age: u32, height: f32){
+    println!("My name is: {}, I am {} years old, and my height is {}", name, age,height);
+}
+
+
