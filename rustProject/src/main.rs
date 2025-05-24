@@ -53,11 +53,50 @@ fn main() {
      let slice : &str = &string[0..5]; 
     println!("Slice value: {}", slice);
     human_id("Jaime", 33, 184.67);
+    let _X: i32 ={
+        let price: i32 =5;
+        let qnty: i32 =5;
+        price * qnty
+    };
+    let sum:i32= add(3,4);
+    println!("Total sales is {}", _X);
+    println!("Adding two values {}", sum);
+    let bmi:f64=bmi(85.1, 1.6256);
+    println!("My BMI is: {}", bmi);
+    //ownership
+    let s1= String::from("RUST");
+     let s2= s1;
+    let len=calculate_legth(&s2);
+    println!("The leng is : {}", len);
+
+    //dropping value if no owner if out of scope
+    let s1= String::from("RUST");
+     let len=calculate_legth(&s1);
+     println!("The length of {} is  {}", s1, len);
+
+     //borrowing and referrences
+     // immutable and mutable referrences
+     let mut im : i32 =5;
+     let  r : &mut i32 = &mut im;
+     *r+=1;
+      println!("value of r is {}", r);
+
 }
 
 // function/ variables should be written in snake case
 fn human_id(name: &str, age: u32, height: f32){
     println!("My name is: {}, I am {} years old, and my height is {}", name, age,height);
+}
+fn add(a:i32, b:i32)->i32{
+    a+b
+}
+fn bmi(weight: f64, height: f64 )->f64{
+    weight / (height * height)
+}
+
+//ownership 
+fn  calculate_legth(s: &String)->usize{
+    s.len()
 }
 
 
